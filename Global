@@ -1,0 +1,19 @@
+# Git-Exercise10
+class Memir:
+
+    def init(self, analogNum, maxVolt):
+        self.analogNum = analogNum
+        self.maxVolt = maxVolt
+
+    def ToDigital(self):
+        if self.analogNum > self.maxVolt:
+            return "not in the range (0-5)"
+        else:
+            num = int((self.analogNum)*204.6)
+            binary = format(num,'b')
+            self.Bits = len(binary)
+            return binary
+
+    def SetDigitalValue(self):
+        digValue = self.ToDigital(self)
+        self.digValue = digValue
